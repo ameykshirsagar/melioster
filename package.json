@@ -1,0 +1,59 @@
+{
+  "name": "ivf-diary",
+  "productName": "IVF Diary",
+  "version": "0.0.1",
+  "description": "Example of using electron-simple-updater",
+  "main": "app/main.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "electron ./app",
+    "dist": "build",
+    "publish": "publish",
+    "release": "npm run dist && npm run publish"
+  },
+  "author": "Arcoiris Labs",
+  "license": "ISC",
+  "private": true,
+  "build": {
+    "appId": "arcoirislabs.ivf-diary",
+    "appImage": {
+      "systemIntegration": "doNotAsk"
+    },
+    "files": [
+      "!publisher.json",
+      "!README.md",
+      "!updates.json"
+    ],
+    "linux": {
+      "category": "Accesories"
+    },
+    "mac": {
+      "category": "public.app-category.medical"
+    },
+    "win": {
+      "target": "squirrel"
+    },
+    "squirrelWindows": {
+      "iconUrl": "https://raw.githubusercontent.com/ameykshirsagar/melioster/master/icons/win/icon.ico"
+    }
+  },
+  "updater": {
+    "url": "https://raw.githubusercontent.com/ameykshirsagar/melioster/master/updates.json"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ameykshirsagar/melioster.git"
+  },
+  "dependencies": {
+    "electron-simple-updater": "^1.2.0"
+  },
+  "devDependencies": {
+    "electron": "*",
+    "electron-builder": "*",
+    "electron-simple-publisher": "*",
+    "electron-builder-squirrel-windows": "*"
+  }
+}
