@@ -1,59 +1,72 @@
 {
-  "name": "ivf-diary",
-  "productName": "IVF Diary",
-  "version": "0.0.1",
-  "description": "Example of using electron-simple-updater",
-  "main": "app/main.js",
-  "scripts": {
-    "postinstall": "install-app-deps",
-    "start": "electron ./app",
-    "dist": "build",
-    "publish": "publish",
-    "release": "npm run dist && npm run publish"
-  },
-  "author": "Arcoiris Labs",
-  "license": "ISC",
-  "private": true,
-  "build": {
-    "appId": "arcoirislabs.ivf-diary",
-    "appImage": {
-      "systemIntegration": "doNotAsk"
+    "name": "ivf-diary",
+    "productName": "IVF Diary",
+    "version": "0.0.4",
+    "description": "Simple Diary Application for gynacologists for maintaining ",
+    "main": "main.js",
+    "scripts": {
+        "postinstall": "install-app-deps",
+        "start": "electron .",
+        "dist": "build",
+        "publish": "publish",
+        "release": "npm run dist && npm run publish"
     },
-    "files": [
-      "!publisher.json",
-      "!README.md",
-      "!updates.json"
-    ],
-    "linux": {
-      "category": "Accesories"
+    "author": "Arcoiris Labs",
+    "license": "ISC",
+    "private": true,
+    "build": {
+        "appId": "arcoirislabs.ivf-diary",
+        "appImage": {
+            "systemIntegration": "doNotAsk"
+        },
+        "files": [
+            "!publisher.json",
+            "!README.md",
+            "!updates.json"
+        ],
+        "linux": {
+            "category": "Accesories"
+        },
+        "mac": {
+            "category": "public.app-category.medical"
+        },
+        "win": {
+            "target": "squirrel"
+        },
+        "squirrelWindows": {
+            "iconUrl": "https://raw.githubusercontent.com/ameykshirsagar/melioster/master/icons/win/icon.ico"
+        }
     },
-    "mac": {
-      "category": "public.app-category.medical"
+    "updater": {
+        "url": "https://raw.githubusercontent.com/ameykshirsagar/melioster/master/updates.json"
     },
-    "win": {
-      "target": "squirrel"
+    "engines": {
+        "node": ">=6.0"
     },
-    "squirrelWindows": {
-      "iconUrl": "https://raw.githubusercontent.com/ameykshirsagar/melioster/master/icons/win/icon.ico"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ameykshirsagar/melioster.git"
+    },
+    "dependencies": {
+        "async": "^2.3.0",
+        "async-arrays": "^1.0.1",
+        "blueimp-tmpl": "^3.11.0",
+        "electron-db": "^0.7.1",
+        "electron-simple-updater": "^1.2.3",
+        "find-free-port": "^1.2.0",
+        "html-pdf": "^2.2.0",
+        "ipc": "0.0.1",
+        "lodash": "^4.17.4",
+        "nedb": "^1.8.0",
+        "npm": "^5.8.0",
+        "rss-parser": "^2.6.1",
+        "zyre-nedb": "^1.0.2",
+        "zyre.js": "^1.1.2"
+    },
+    "devDependencies": {
+        "electron": "*",
+        "electron-builder": "*",
+        "electron-simple-publisher": "*",
+        "electron-builder-squirrel-windows": "*"
     }
-  },
-  "updater": {
-    "url": "https://raw.githubusercontent.com/ameykshirsagar/melioster/master/updates.json"
-  },
-  "engines": {
-    "node": ">=6.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ameykshirsagar/melioster.git"
-  },
-  "dependencies": {
-    "electron-simple-updater": "^1.2.0"
-  },
-  "devDependencies": {
-    "electron": "*",
-    "electron-builder": "*",
-    "electron-simple-publisher": "*",
-    "electron-builder-squirrel-windows": "*"
-  }
 }
